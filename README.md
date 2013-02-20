@@ -1,7 +1,7 @@
 Caisson
 ===============
 
-Caisson will provide a set of tools to facilitate the integration of Zurb-Foundation to your Rails project.
+Caisson provide a set of tools to facilitate the integration of Zurb-Foundation to your Rails project.
 
 Install
 -------
@@ -17,6 +17,18 @@ In your Gemfile:
 ```ruby
 gem 'zurb-foundation'
 gem 'caisson'
+```
+
+In your application.js
+
+```javascript
+//= require foundation
+//= require caisson
+```
+
+In your application.scss
+```css
+@import "foundation";
 ```
 
 Orbit Slider
