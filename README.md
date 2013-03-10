@@ -15,6 +15,7 @@ gem install caisson
 In your Gemfile:
 
 ```ruby
+gem 'compass-rails'
 gem 'zurb-foundation'
 gem 'caisson'
 ```

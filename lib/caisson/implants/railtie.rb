@@ -4,6 +4,10 @@ module Caisson::Implants
       ActiveSupport.on_load :action_view do
         require 'caisson/helpers'
       end
+
+      if defined? Mongoid
+        require 'caisson/implants/mongoid'
+      end
     end
   end
 end
