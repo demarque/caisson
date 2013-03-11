@@ -3,6 +3,10 @@ module Caisson::Helpers
     '<meta name="viewport" content="width=device-width, initial-scale=1.0" />'.html_safe
   end
 
+  def grid
+    @grid ||= Caisson::Helpers::Grid.new(self)
+  end
+
   def orbit_slider(items, options={}, &block)
     Caisson::Helpers::OrbitSlider.new(self, items, options).generate(&block)
   end
@@ -27,4 +31,5 @@ module Caisson::Helpers
 end
 
 require 'caisson/helpers/form'
+require 'caisson/helpers/grid'
 require 'caisson/helpers/orbit_slider'
