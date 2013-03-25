@@ -19,6 +19,7 @@ module Caisson::Helpers
     private
 
     def build_options(options)
+      # DEPRECATED IN VERSION 4
       options.reverse_merge(
         advance_speed: 4000,
         animation: "horizontal-push",
@@ -41,37 +42,23 @@ module Caisson::Helpers
         timer: false)
     end
 
-    def build_item(item, last=false, &block)
-      css_class = ['column']
-      css_class << get_column_size
-      css_class << 'end' if last
 
-      '<li class="' + css_class.join(' ') + '">' + capture(item, &block).to_s + '</li>'
+    def build_item(item, last=false, &block)
+      '<li>' + capture(item, &block).to_s + '</li>'
     end
 
     def build_slides(&block)
       slides = []
 
       @items.each_slice @options[:columns_per_slide] do |slice|
-        content = '<div><ul class="row">'
+        content = '<li><div class="spacer"></div><ul class="wink small-block-grid-3 large-block-grid-' + @options[:columns_per_slide].to_s + '">'
         slice.each_with_index { |item,i| content << build_item(item, (i==slice.length-1), &block) }
-        content << '</ul></div>'
+        content << '</ul><div class="spacer"></div></li>'
 
         slides << content
       end
 
       return slides.join("\n")
-    end
-
-    def get_column_size
-      case @options[:columns_per_slide]
-        when 1 then 'twelve'
-        when 2 then 'six'
-        when 3 then 'four'
-        when 4 then 'three'
-        when 5,6 then 'two'
-        else 'one'
-      end
     end
 
     def parse_attribute_value(raw_value)
@@ -82,19 +69,27 @@ module Caisson::Helpers
       end
     end
 
+    def stringify_options
+      results = []
+
+      @options.each { |k,v| results << "#{k}:#{v};" }
+
+      return results.join
+    end
+
     def wrap_slider(content)
-      attributes = { 'data-caisson' => 'orbit-slider' }
+      attributes = { 'data-caisson' => 'orbit-slider', 'data-orbit' => '', 'data-options' => stringify_options }
 
       @options.each do |k,v|
         case k.to_s
           when 'id' then attributes[:id] = v
           when 'class' then attributes[:class] = ['slider', v].compact.join(' ')
           when 'columns_per_slide' then nil
-          else attributes["data-#{k}".gsub('_', '-')] = parse_attribute_value(v)
+          else nil #attributes["data-#{k}".gsub('_', '-')] = parse_attribute_value(v)
         end
       end
 
-      return content_tag(:div, content.html_safe, attributes)
+      return content_tag(:ul, content.html_safe, attributes)
     end
   end
 end

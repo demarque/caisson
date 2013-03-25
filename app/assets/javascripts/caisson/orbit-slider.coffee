@@ -3,7 +3,8 @@
 #*************************************************************************************
 class @OrbitSlider
   constructor: (@holder) ->
-    @holder.orbit @buildAttributes()
+    # DEPRECATED IN VERSION 4
+    #@holder.orbit @buildAttributes()
 
 
   buildAttributes: () ->
