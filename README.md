@@ -57,39 +57,11 @@ Orbit Slider
     <th>Default</th>
   </tr>
   <tr>
-    <td>advance_speed</td>
-    <td>4000</td>
-  </tr>
-  <tr>
-    <td>animation</td>
-    <td>horizontal-push</td>
-  </tr>
-  <tr>
     <td>animation_speed</td>
     <td>400</td>
   </tr>
   <tr>
     <td>bullets</td>
-    <td>false</td>
-  </tr>
-  <tr>
-    <td>bullet_thumbs</td>
-    <td>false</td>
-  </tr>
-  <tr>
-    <td>bullet_thumbs_location</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>caption_animation</td>
-    <td>fade</td>
-  </tr>
-  <tr>
-    <td>caption_animation_speed</td>
-    <td>800</td>
-  </tr>
-  <tr>
-    <td>captions</td>
     <td>false</td>
   </tr>
   <tr>
@@ -101,36 +73,12 @@ Orbit Slider
     <td>1</td>
   </tr>
   <tr>
-    <td>directional_nav</td>
-    <td>true</td>
-  </tr>
-  <tr>
-    <td>fluid</td>
-    <td>16x5</td>
-  </tr>
-  <tr>
     <td>id</td>
     <td></td>
   </tr>
   <tr>
-    <td>pause_on_hover</td>
-    <td>true</td>
-  </tr>
-  <tr>
-    <td>reset_timer_on_click</td>
-    <td>false</td>
-  </tr>
-  <tr>
-    <td>start_clock_on_mouse_out</td>
-    <td>true</td>
-  </tr>
-  <tr>
-    <td>start_clock_on_mouse_out_after</td>
-    <td>1000</td>
-  </tr>
-  <tr>
-    <td>timer</td>
-    <td>false</td>
+    <td>timer_speed</td>
+    <td>0</td>
   </tr>
 </table>
 
