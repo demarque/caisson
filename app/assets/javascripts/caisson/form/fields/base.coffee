@@ -46,7 +46,7 @@
 
       input: () -> if @field[0].tagName.toLowerCase() == 'input' then @field else $(@field.find('input'))
 
-      isPlaceholder: () -> @field.attr('placeholder') isnt undefined
+      isPlaceholder: () -> !!@field.attr('placeholder')
 
       isSubmitAuto: () -> @field.data('submit') is 1
 
