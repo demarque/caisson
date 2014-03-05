@@ -24,7 +24,7 @@ class @OrbitSlider
       resetTimerOnClick:          @getBoolAttr('reset-timer-on-click'),
       startClockOnMouseOut:       @getBoolAttr('start-clock-on-mouse-out'),
       startClockOnMouseOutAfter:  @getAttr('start-clock-on-mouse-out-after'),
-      timer:                      @getBoolAttr('timer')
+      timer:                      10000
     }
 
   getAttr: (name) -> @holder.data(name),
