@@ -25,7 +25,7 @@ module Caisson::Helpers
         class: 'slider',
         columns_per_slide: 1,
         id: "slider-#{rand(10000)}",
-        timer_speed: 0)
+        timer_speed: 10000)
     end
 
 
