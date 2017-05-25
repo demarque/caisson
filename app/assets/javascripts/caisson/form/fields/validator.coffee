@@ -88,7 +88,7 @@
           @messages.push "La date d'expiration est doit avoir un format MM/AA."
 
 
-      isEmail: () -> if not /^[a-zA-Z0-9.\$#%+-\/=?_]+@([a-zA-Z0-9.\-]+\.)+[a-zA-Z0-9.\-]{2,6}$/.test(@value) then @messages.push 'Le courriel est invalide.'
+      isEmail: () -> if not /^[a-zA-Z0-9.\$#%+-\/=?_]+@([a-zA-Z0-9.\-]+\.)+[a-zA-Z0-9.\-]{2,}$/.test(@value) then @messages.push 'Le courriel est invalide.'
 
       isLengthEql: (spec) ->
         [tag, length] = spec.split('-')
